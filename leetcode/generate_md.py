@@ -24,3 +24,6 @@ md.seek(0)
 md.write(page)
 
 md.write(" " + title + "\n\n" + link + "\n\n```python\n" + solution + "```\n\n##")
+
+src.close()
+md.close()
