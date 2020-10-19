@@ -1,12 +1,12 @@
-876. Middle of the Linked List
-https://leetcode.com/problems/middle-of-the-linked-list/
+234. Palindrome Linked List
+https://leetcode.com/problems/palindrome-linked-list/
 class Solution:
-    def middleNode(self, head: ListNode) -> ListNode:
-        head_copy = head
-        count = 0
-        while head_copy is not None:
-            head_copy = head_copy.next
-            count += 1
-        for i in range(count//2):
+    def isPalindrome(self, head: ListNode) -> bool:
+        copy = []
+        while head is not None:
+            copy.append(head.val)
             head = head.next
-        return head
+        for i in range(len(copy)):
+            if copy[i] != copy[len(copy) - i]:
+                return False
+        return True

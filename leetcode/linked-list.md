@@ -5,6 +5,8 @@
 
 + [Middle of the Linked List](#problems/middle-of-the-linked-list)
 
++ [Palindrome Linked List](#problems/palindrome-linked-list)
+
 ## Reverse Linked List
 
 https://leetcode.com/problems/reverse-linked-list/
@@ -35,6 +37,23 @@ https://leetcode.com/problems/middle-of-the-linked-list/
      for i in range(count//2):
          head = head.next
      return head
+```
+
+## Palindrome Linked List
+
+https://leetcode.com/problems/palindrome-linked-list/
+
+```python
+ def isPalindrome(self, head: ListNode) -> bool:
+     copy = []
+     while head is not None:
+         copy.append(head.val)
+         head = head.next
+     for i in range(len(copy)):
+         if copy[i] != copy[len(copy) - i]:
+             return False
+     return True
+
 ```
 
 ##
