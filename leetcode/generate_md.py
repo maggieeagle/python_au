@@ -1,5 +1,5 @@
 src = open('source_leetcode_data.txt', 'r')
-md = open('intervals.md', 'r+')
+md = open('linked-list.md', 'r+')
 
 if (md.read(1) != "#"):
     md.write("# Intervals\n\n\n##")
