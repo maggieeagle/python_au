@@ -1,16 +1,28 @@
-509. Fibonacci Number
-https://leetcode.com/problems/fibonacci-number/
+976. Largest Perimeter Triangle
+https://leetcode.com/problems/largest-perimeter-triangle/
 class Solution:
-    def fib(self, N: int) -> int:
-        prevprev = 0
-        prev = 1
-        fi = 0
-        if N == 0:
-            return 0
-        if N == 1:
-            return 1
-        for i in range(N - 1):
-            fi = prevprev + prev
-            prevprev = prev
-            prev = fi
-        return fi
+    def largestPerimeter(self, A: List[int]) -> int:
+        A.sort(reverse=True)
+        id1 = 0
+        id2 = 1
+        id3 = 2
+        while True:
+            if id1 >= len(A) or id2 >= len(A) or id3 >= len(A):
+                return 0
+            a = A[id1]
+            b = A[id2]
+            c = A[id3]
+            if a + b > c and a + c > b and b + c > a:
+                return a + b + c
+            if a + b <= c:
+                id3 += 1
+                while id3 == id2 or id3 == id1:
+                    id3 += 1
+            if a + c <= b:
+                id2 += 1
+                while id2 == id1 or id2 == id3:
+                    id2 += 1
+            if b + c <= a:
+                id1 += 1
+                while id1 == id2 or id1 == id3:
+                    id1 += 1
