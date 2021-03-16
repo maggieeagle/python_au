@@ -1,8 +1,8 @@
 src = open('source_leetcode_data.txt', 'r')
-md = open('linked-list.md', 'r+')
+md = open('math.md', 'r+')
 
 if (md.read(1) != "#"):
-    md.write("# Intervals\n\n\n##")
+    md.write("# Math\n\n\n##")
 
 md.seek(0)
 page = md.read()
