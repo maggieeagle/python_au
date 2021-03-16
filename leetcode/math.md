@@ -6,6 +6,8 @@
 
 + [Palindrome Number](#problems/palindrome-number)
 
++ [Fizz Buzz](#problems/fizz-buzz)
+
 ## Reverse Integer
 
 https://leetcode.com/problems/reverse-integer/
@@ -46,6 +48,32 @@ https://leetcode.com/problems/palindrome-number/
          del symbols[length - 2]
          length -= 2
      return True
+
+```
+
+
+## Fizz Buzz
+
+https://leetcode.com/problems/fizz-buzz/
+
+```python
+ def fizzBuzz(self, n: int) -> List[str]:
+     out = []
+     for i in range(n + 1):
+         if i == 0:
+             continue
+         if i % 3 == 0 and i % 5 == 0:
+             out.append("FizzBuzz")
+         else:
+             if i % 3 == 0:
+                 out.append("Fizz")
+             else:
+                 if i % 5 == 0:
+                     out.append("Buzz")
+                 else:
+                     out.append(str(i))
+     return out
+
 
 ```
 
