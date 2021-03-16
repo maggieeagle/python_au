@@ -1,22 +1,20 @@
-57. Insert Interval
-https://leetcode.com/problems/insert-interval/
+557. Reverse Words in a String III
+https://leetcode.com/problems/reverse-words-in-a-string-iii/
 class Solution:
-    def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
-        intervals.append(newInterval)
-        intervals.sort()
-        print(intervals)
-        if (intervals == []):
-            return intervals
-        begin_prev = intervals[0][0]
-        end_prev = intervals[0][1]
-        ans:
-            List[List[int]] = []
-        for i in intervals:
-            if i[0] > end_prev:
-                ans.append([begin_prev, end_prev])
-                begin_prev = i[0]
-                end_prev = i[1]
+    def reverseWords(self, s: str) -> str:
+        s = list(s)
+        word = ''
+        answer = ''
+        for i in s:
+            if i != ' ':
+                word += i
             else:
-                end_prev = max(end_prev, i[1])
-        ans.append([begin_prev, end_prev])
-        return ans
+                word = word[::-1]
+                for i in word:
+                    answer += i
+                answer += ' '
+                word = ''
+        word = word[::-1]
+        for i in word:
+                    answer += i
+        return answer
