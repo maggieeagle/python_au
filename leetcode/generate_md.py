@@ -1,5 +1,5 @@
 src = open('source_leetcode_data.txt', 'r')
-md = open('string.md', 'r+')
+md = open('array.md', 'r+')
 
 if (md.read(1) != "#"):
     md.write("# Intervals\n\n\n##")

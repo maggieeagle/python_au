@@ -1,20 +1,8 @@
-557. Reverse Words in a String III
-https://leetcode.com/problems/reverse-words-in-a-string-iii/
+977. Squares of a Sorted Array
+https://leetcode.com/problems/squares-of-a-sorted-array/
 class Solution:
-    def reverseWords(self, s: str) -> str:
-        s = list(s)
-        word = ''
-        answer = ''
-        for i in s:
-            if i != ' ':
-                word += i
-            else:
-                word = word[::-1]
-                for i in word:
-                    answer += i
-                answer += ' '
-                word = ''
-        word = word[::-1]
-        for i in word:
-                    answer += i
-        return answer
+    def sortedSquares(self, A: List[int]) -> List[int]:
+        for i in range(len(A)):
+            A[i] = A[i]*A[i]
+        A.sort()
+        return A
