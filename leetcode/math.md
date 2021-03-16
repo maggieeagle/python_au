@@ -14,6 +14,8 @@
 
 + [Largest Perimeter Triangle](#problems/largest-perimeter-triangle)
 
++ [Sqrt(x)](#problems/sqrtx)
+
 ## Reverse Integer
 
 https://leetcode.com/problems/reverse-integer/
@@ -160,6 +162,34 @@ https://leetcode.com/problems/largest-perimeter-triangle/
              id1 += 1
              while id1 == id2 or id1 == id3:
                  id1 += 1
+
+```
+
+
+## Sqrt(x)
+
+https://leetcode.com/problems/sqrtx/
+
+```python
+ def mySqrt(self, x: int) -> int:
+     if x == 1:
+         return 1
+     first = 0
+     last = x
+     while True:
+         middle = (first + last)/2
+         if x > middle**2:
+             first = middle
+         if x < middle**2:
+             last = middle
+         if x == middle**2:
+             return int(middle)
+         if abs(middle**2 - x) < 0.1:
+             print(middle)
+             if round(middle)**2 > x:
+                 return int(middle)
+             else:
+                 return int(round(middle))
 
 ```
 
