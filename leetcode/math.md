@@ -8,6 +8,8 @@
 
 + [Fizz Buzz](#problems/fizz-buzz)
 
++ [Base 7](#problems/base-7)
+
 ## Reverse Integer
 
 https://leetcode.com/problems/reverse-integer/
@@ -75,6 +77,31 @@ https://leetcode.com/problems/fizz-buzz/
      return out
 
 
+```
+
+
+## Base 7
+
+https://leetcode.com/problems/base-7/
+
+```python
+ def convertToBase7(self, num: int) -> str:
+     answer = []
+     out = ""
+     if num < 0:
+         out += "-"
+         num = abs(num)
+     if num == 0:
+         return "0"
+     remaind = 0
+     while num != 0:
+         remaind = num % 7
+         answer.append(remaind)
+         num = num // 7
+     answer.reverse()
+     for i in answer:
+         out = out + str(i)
+     return out
 ```
 
 ##
