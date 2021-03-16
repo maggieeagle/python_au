@@ -12,6 +12,8 @@
 
 + [Fibonacci Number](#problems/fibonacci-number)
 
++ [Largest Perimeter Triangle](#problems/largest-perimeter-triangle)
+
 ## Reverse Integer
 
 https://leetcode.com/problems/reverse-integer/
@@ -125,6 +127,40 @@ https://leetcode.com/problems/fibonacci-number/
          prevprev = prev
          prev = fi
      return fi
+```
+
+
+## Largest Perimeter Triangle
+
+https://leetcode.com/problems/largest-perimeter-triangle/
+
+```python
+ def largestPerimeter(self, A: List[int]) -> int:
+     A.sort(reverse=True)
+     id1 = 0
+     id2 = 1
+     id3 = 2
+     while True:
+         if id1 >= len(A) or id2 >= len(A) or id3 >= len(A):
+             return 0
+         a = A[id1]
+         b = A[id2]
+         c = A[id3]
+         if a + b > c and a + c > b and b + c > a:
+             return a + b + c
+         if a + b <= c:
+             id3 += 1
+             while id3 == id2 or id3 == id1:
+                 id3 += 1
+         if a + c <= b:
+             id2 += 1
+             while id2 == id1 or id2 == id3:
+                 id2 += 1
+         if b + c <= a:
+             id1 += 1
+             while id1 == id2 or id1 == id3:
+                 id1 += 1
+
 ```
 
 ##
