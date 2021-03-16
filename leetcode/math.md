@@ -10,6 +10,8 @@
 
 + [Base 7](#problems/base-7)
 
++ [Fibonacci Number](#problems/fibonacci-number)
+
 ## Reverse Integer
 
 https://leetcode.com/problems/reverse-integer/
@@ -102,6 +104,27 @@ https://leetcode.com/problems/base-7/
      for i in answer:
          out = out + str(i)
      return out
+```
+
+
+## Fibonacci Number
+
+https://leetcode.com/problems/fibonacci-number/
+
+```python
+ def fib(self, N: int) -> int:
+     prevprev = 0
+     prev = 1
+     fi = 0
+     if N == 0:
+         return 0
+     if N == 1:
+         return 1
+     for i in range(N - 1):
+         fi = prevprev + prev
+         prevprev = prev
+         prev = fi
+     return fi
 ```
 
 ##
