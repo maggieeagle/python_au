@@ -1,22 +1,14 @@
-69. Sqrt(x)
-https://leetcode.com/problems/sqrtx/
+435. Non-overlapping Intervals
+https://leetcode.com/problems/non-overlapping-intervals/
 class Solution:
-    def mySqrt(self, x: int) -> int:
-        if x == 1:
-            return 1
-        first = 0
-        last = x
-        while True:
-            middle = (first + last)/2
-            if x > middle**2:
-                first = middle
-            if x < middle**2:
-                last = middle
-            if x == middle**2:
-                return int(middle)
-            if abs(middle**2 - x) < 0.1:
-                print(middle)
-                if round(middle)**2 > x:
-                    return int(middle)
-                else:
-                    return int(round(middle))
+    def eraseOverlapIntervals(self, intervals: List[List[int]]) -> int:
+        intervals.sort()
+        prev = float("-inf")
+        count = 0
+        for i in intervals:
+            if i[0] >= prev:
+                prev = i[1]
+            else:
+                count+=1
+                prev = min(prev, i[1])
+        return count
